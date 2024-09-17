@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Matemáticas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Operaciones Matemáticas</h1>
+        <input type="number" id="num1" placeholder="Ingresa el primer número">
+        <input type="number" id="num2" placeholder="Ingresa el segundo número">
+        <button onclick="realizarOperaciones()">Calcular</button>
+
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        function realizarOperaciones() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let resultadoDiv = document.getElementById('resultado');
+            let resultados = '';
+
+            for (let i = 1; i <= 5; i++) {
+                switch (i) {
+                    case 1:
+                        resultados += `<p>Iteración ${i}: Suma = ${num1 + num2}</p>`;
+                        break;
+                    case 2:
+                        resultados += `<p>Iteración ${i}: Resta = ${num1 - num2}</p>`;
+                        break;
+                    case 3:
+                        resultados += `<p>Iteración ${i}: Multiplicación = ${num1 * num2}</p>`;
+                        break;
+                    case 4:
+                        resultados += `<p>Iteración ${i}: División = ${num1 / num2}</p>`;
+                        break;
+                    case 5:
+                        resultados += `<p>Iteración ${i}: Módulo = ${num1 % num2}</p>`;
+                        break;
+                }
+            }
+            resultadoDiv.innerHTML = resultados;
+        }
+    </script>
+
+</body>
+</html>
